@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>O Segredo dos Brigadeiros Perfeitos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--choc:#3B2118;--dark:#24140F;--bege:#E9D6B8;--creme:#FFF8EF;--gold:#C6A15B;--white:#fff;
+--bg:var(--creme);--fg:var(--dark);--card:#fff;--line:#E9D6B8;--muted:#6b4f43;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#24140F;--fg:#FFF8EF;--card:#3B2118;--line:#5a3a2d;--muted:#E9D6B8}}
+:root[data-theme="dark"]{--bg:#24140F;--fg:#FFF8EF;--card:#3B2118;--line:#5a3a2d;--muted:#E9D6B8}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 "DM Sans",system-ui,sans-serif;min-height:100vh}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(1.8rem,6vw,2.6rem);font-weight:800}h2{font-size:clamp(1.5rem,5vw,2rem)}
+main{max-width:640px;margin:0 auto;padding:20px 18px 60px}
+.screen{display:none;animation:in .35s ease}.screen.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.btn{display:block;width:100%;padding:17px 20px;border:0;border-radius:16px;background:var(--gold);color:var(--dark);font:700 1.05rem "DM Sans",sans-serif;text-align:center;text-decoration:none;cursor:pointer;box-shadow:0 8px 20px rgba(59,33,24,.22);margin-top:18px}
+.btn:hover{filter:brightness(1.06)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn:focus-visible,.opt:focus-visible,input:focus-visible,.back:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(59,33,24,.1)}
+input[type=text]{width:100%;padding:16px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--fg);font:1.1rem "DM Sans",sans-serif}
+.opt{display:block;width:100%;text-align:left;padding:16px 18px;margin-top:12px;border:2px solid var(--line);border-radius:16px;background:var(--card);color:var(--fg);font:500 1rem "DM Sans",sans-serif;cursor:pointer;transition:border-color .15s,transform .15s}
+.opt:hover{border-color:var(--gold)}.opt.sel{border-color:var(--gold);background:rgba(198,161,91,.18);font-weight:700}
+.bar{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s}
+.top{display:flex;align-items:center;justify-content:space-between;font-size:.9rem;color:var(--muted)}
+.back{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:6px 0}
+.hero{text-align:center;padding-top:8px}
+.brig{width:150px;height:150px;border-radius:50%;margin:10px auto 26px;position:relative;background:radial-gradient(circle at 35% 30%,#7a4a36,#3B2118 55%,#24140F);box-shadow:0 18px 30px rgba(36,20,15,.35);animation:bob 3.5s ease-in-out infinite}
+.brig::before{content:"";position:absolute;inset:0;border-radius:50%;background:
+radial-gradient(circle 3px at 20% 62%,#E9D6B8 98%,transparent),radial-gradient(circle 3px at 38% 78%,#C6A15B 98%,transparent),radial-gradient(circle 3px at 62% 80%,#E9D6B8 98%,transparent),radial-gradient(circle 3px at 80% 60%,#C6A15B 98%,transparent),radial-gradient(circle 3px at 74% 36%,#E9D6B8 98%,transparent),radial-gradient(circle 3px at 50% 18%,#C6A15B 98%,transparent),radial-gradient(circle 3px at 27% 34%,#E9D6B8 98%,transparent),radial-gradient(circle 3px at 52% 50%,#C6A15B 98%,transparent)}
+.brig::after{content:"";position:absolute;left:50%;bottom:-16px;width:170px;height:34px;transform:translateX(-50%);border-radius:50%;border:3px solid var(--gold);border-top:0;opacity:.7;z-index:-1}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.sub{color:var(--muted)}
+.steps{list-style:none;padding:0;margin:14px 0 0}.steps li{padding:10px 0;color:var(--muted);transition:color .3s}.steps li.on{color:var(--fg);font-weight:700}.steps li.on::before{content:"✓ "}
+.res{font-family:Fraunces,serif;font-size:1.05rem}
+ul.chk{list-style:none;padding:0;margin:12px 0}ul.chk li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line)}ul.chk li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+.vid{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--dark);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--bege);text-align:center;padding:14px;font-size:.92rem}
+.vid video,.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.watch{text-align:center;font-size:.9rem;color:var(--muted);margin-top:8px}
+.vid.short{aspect-ratio:9/16;max-width:340px;margin:0 auto}
+.dot{display:inline-block;width:.6em;height:.6em;border-radius:50%;background:#22c55e;margin-right:.45em;box-shadow:0 0 0 3px rgba(34,197,94,.25)}
+#names{font:700 .95rem Fraunces,serif;color:var(--fg);padding:8px 0;min-height:2.2em}#names.in{animation:nm .5s ease}@keyframes nm{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.price{text-align:center}.old{text-decoration:line-through;color:var(--muted);font-size:1.2rem}.now{font:800 clamp(2.4rem,10vw,3.4rem) Fraunces,serif;color:var(--fg);line-height:1.1}
+.pay{margin-top:34px}
+.toast{position:fixed;left:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:min(300px,calc(100vw - 24px));background:#fff;color:#24140F;border:1px solid #E9D6B8;border-left:4px solid #C6A15B;border-radius:12px;padding:10px 14px;font-size:.85rem;box-shadow:0 8px 24px rgba(0,0,0,.3);transform:translateX(-120%);opacity:0;transition:.5s;z-index:20;pointer-events:none}
+.toast.show{transform:none;opacity:1}
+footer{text-align:center;font-size:.85rem;color:var(--muted);padding:30px 18px;border-top:1px solid var(--line)}footer a{color:inherit;margin:0 8px}
+.legal{position:fixed;inset:0;z-index:30;background:var(--bg);overflow:auto;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(40px + env(safe-area-inset-bottom,0px))}.legal[hidden]{display:none}.legal article{max-width:640px;margin:0 auto}.legal h3{margin-top:1.4em;font-size:1.1rem}.legal p,.legal li{color:var(--muted)}.legal .x{display:block;margin:0 0 14px auto}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main id="app">
+<div class="watch" id="online" hidden></div>
+
+<section class="screen on" id="s-intro"><div class="hero">
+<div class="brig" aria-hidden="true"></div>
+<h1>Descobre como preparar brigadeiros irresistíveis e transformar essa habilidade numa oportunidade de negócio.</h1>
+<p class="sub">Responde a algumas perguntas rápidas e descobre o caminho ideal para começares.</p>
+<button class="btn" data-go="name">COMEÇAR AGORA</button></div></section>
+
+<section class="screen" id="s-name"><div class="card">
+<h2>Como te chamas?</h2>
+<input type="text" id="nameIn" placeholder="O teu primeiro nome" maxlength="30" autocomplete="given-name" aria-label="Primeiro nome">
+<button class="btn" id="nameBtn" disabled>CONTINUAR</button></div></section>
+
+<section class="screen" id="s-quiz"><div class="top"><button class="back" id="back">← Voltar</button><span id="count"></span></div>
+<div class="bar"><i id="bar"></i></div>
+<div class="card"><h2 id="q"></h2><div id="opts"></div><button class="btn" id="next" disabled>CONTINUAR</button></div></section>
+
+<section class="screen" id="s-load"><div class="card">
+<h2 id="loadT"></h2><div class="bar"><i id="lbar"></i></div>
+<ul class="steps" id="lsteps"></ul></div></section>
+
+<section class="screen" id="s-result"><div class="card">
+<h2>ANÁLISE CONCLUÍDA!</h2>
+<p class="res" id="resTxt"></p><p id="resHelp"></p>
+<button class="btn" data-go="offer">QUERO DESCOBRIR O MÉTODO</button></div></section>
+
+<section class="screen" id="s-offer">
+<div class="hero"><h1>O SEGREDO DOS BRIGADEIROS PERFEITOS</h1>
+<p class="sub">Aprende a preparar brigadeiros deliciosos, com textura cremosa, sabores irresistíveis e uma apresentação capaz de conquistar qualquer cliente.</p></div>
+<div class="vid" id="vsl"></div>
+<div class="watch" id="watch" hidden></div>
+<div class="card" style="margin-top:22px"><h3>O que vais aprender</h3>
+<ul class="chk"><li>Brigadeiro tradicional perfeito</li><li>Brigadeiros gourmet</li><li>Brigadeiros recheados</li><li>Técnicas de preparação e textura</li><li>Decoração e apresentação</li><li>Cálculo de custos e preços de venda</li><li>Estratégias para começar a vender</li></ul>
+<p class="sub" style="font-size:.92rem">Este ebook ensina técnicas e métodos. Os resultados dependem da tua prática e dedicação; não garantimos rendimentos.</p>
+<a class="btn" data-buy>COMPRAR AGORA</a></div>
+
+<div class="card price" style="margin-top:22px"><h3>O Segredo dos Brigadeiros Perfeitos</h3>
+<div class="old" id="old"></div><div class="now" id="now"></div>
+<a class="btn" data-buy>QUERO GARANTIR O MEU EBOOK</a></div>
+
+<div class="pay"><h2>COMO EFECTUAR O TEU PAGAMENTO</h2>
+<p class="sub">Assiste ao vídeo e acompanha o passo a passo para concluir a tua compra.</p>
+<div class="vid short" id="payvid"></div>
+<a class="btn" data-buy>QUERO COMEÇAR HOJE</a></div>
+</section>
+</main>
+
+<div class="legal" id="legal" hidden role="dialog" aria-modal="true"><article>
+<button class="back x" id="legalX">✕ Fechar</button>
+<div id="privacidade" hidden>
+<h2>Política de Privacidade</h2><p>Última actualização: novembro de 2026.</p>
+<h3>Que dados usamos</h3>
+<ul><li><b>Primeiro nome:</b> o nome que indicas no questionário serve apenas para personalizar a tua experiência. Fica na memória do teu navegador e não é enviado nem guardado por nós.</li>
+<li><b>Respostas do questionário:</b> usadas só para mostrar o teu resultado. Não são guardadas.</li>
+<li><b>Identificador anónimo do visitante:</b> um código aleatório guardado no teu navegador, usado para contar quantas pessoas estão a ver o vídeo neste momento. Não contém o teu nome nem outros dados pessoais.</li>
+<li><b>Vídeos do YouTube:</b> ao reproduzir os vídeos, o YouTube pode recolher dados segundo a sua própria política.</li></ul>
+<h3>Compra e pagamento</h3>
+<p>A compra é feita na plataforma de checkout Mentora (mentora.ao). Os dados de pagamento e de contacto são recolhidos e tratados por essa plataforma, segundo as políticas dela.</p>
+<h3>Nomes de compradores</h3>
+<p>Só mostramos o nome de um comprador nas notificações se a compra estiver confirmada e a pessoa tiver autorizado essa apresentação.</p>
+<h3>Os teus direitos</h3>
+<p>Podes pedir informação, correcção ou eliminação dos dados que tenhamos sobre ti através do contacto indicado abaixo.</p>
+<p id="lc1"></p></div>
+<div id="termos" hidden>
+<h2>Termos e Condições</h2><p>Última actualização: novembro de 2026.</p>
+<h3>O produto</h3>
+<p>O Segredo dos Brigadeiros Perfeitos é um ebook digital com conteúdo sobre preparação, decoração e venda de brigadeiros. Não é um produto físico.</p>
+<h3>Compra e acesso</h3>
+<p>A compra e o pagamento são feitos na plataforma Mentora, ao preço indicado na página no momento da compra. O acesso ao ebook é dado por essa plataforma depois da confirmação do pagamento.</p>
+<h3>Resultados</h3>
+<p>O ebook ensina técnicas e métodos. Os resultados dependem da prática, da dedicação e das circunstâncias de cada pessoa. Não garantimos resultados, rendimentos nem lucros.</p>
+<h3>Direitos de autor</h3>
+<p>O conteúdo do ebook é de uso pessoal. Não é permitido copiar, revender ou partilhar o ficheiro ou o acesso sem autorização.</p>
+<h3>Reembolsos e apoio</h3>
+<p>Os pedidos de reembolso e de apoio à compra seguem as regras da plataforma Mentora.</p>
+<p id="lc2"></p></div>
+</article></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<footer>
+<p><b>O Segredo dos Brigadeiros Perfeitos</b> · Direitos reservados</p>
+<p><a href="#privacidade">Política de Privacidade</a><a href="#termos">Termos e Condições</a><span id="contact"></span></p>
+<div id="names" hidden aria-live="off"></div>
+<p>Aprende, pratica e transforma a tua paixão pelos brigadeiros numa nova habilidade.</p>
+</footer>
+
+<script>
+/* ===== CONFIGURAÇÃO ===== */
+var CONFIG={
+ VSL_VIDEO_URL:"assets/vsl.mp4",            /* ficheiro enviado (antes: https://youtu.be/IwPAqHBVqkw) */
+ PAYMENT_TUTORIAL_URL:"assets/pagamento.mp4",    /* ficheiro enviado (antes: https://youtube.com/shorts/k8sfVJEPX6U) */
+ CHECKOUT_URL:"https://mentora.ao/produto/3cbebfb3-7bf5-4734-9d85-46cc050f8d7b",
+ PRICE_KZ:2700, ORIGINAL_PRICE_KZ:6000,
+ DEMO_NOTIFICATIONS_ENABLED:false,
+ SUPPORT_CONTACT:"",            /* só preencher com um contacto real */
+ SUPABASE_URL:"",              /* https://SEU-PROJECTO.supabase.co */
+ SUPABASE_ANON_KEY:"",         /* chave pública (anon). NUNCA colocar a service_role aqui */
+ PURCHASES_ENDPOINT:""          /* endpoint do backend que devolve compras reais confirmadas: [{"name":"Maria F."}] */
+};
+
+var Q=[
+{q:"Qual é o teu principal objectivo?",o:["Quero aprender a fazer brigadeiros.","Quero começar a vender brigadeiros.","Quero melhorar a qualidade dos meus brigadeiros.","Quero criar uma fonte de rendimento extra."]},
+{q:"Já sabes preparar brigadeiros?",o:["Nunca preparei.","Já tentei, mas tenho dificuldades.","Sei fazer os tradicionais.","Já preparo brigadeiros para vender."]},
+{q:"Que tipo de brigadeiros gostarias de aprender?",o:["Tradicionais.","Gourmet.","Recheados.","Todos os tipos."]},
+{q:"Quanto tempo consegues dedicar à aprendizagem?",o:["30 minutos por dia.","1 hora por dia.","Algumas horas por semana.","Quero aprender ao meu próprio ritmo."]},
+{q:"Qual é a tua maior dificuldade neste momento?",o:["Acertar no ponto e na textura.","Conseguir sabores diferenciados.","Fazer uma boa apresentação.","Calcular custos e preços de venda.","Não sei por onde começar."]},
+{q:"Quando gostarias de começar?",o:["Hoje mesmo.","Nos próximos dias.","Ainda este mês.","Estou apenas a pesquisar."]}
+];
+var st={name:"",i:0,a:[]};
+var $=function(id){return document.getElementById(id)};
+function show(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("on")});$("s-"+id).classList.add("on");window.scrollTo({top:0,behavior:"smooth"});if(id==="offer")initOffer()}
+function fmt(n){return n.toLocaleString("pt-AO").replace(/\s|\u00a0/g,".")+" Kz"}
+
+/* navegação */
+document.querySelectorAll("[data-go]").forEach(function(b){b.onclick=function(){show(b.dataset.go)}});
+$("nameIn").oninput=function(){$("nameBtn").disabled=this.value.trim().length<2};
+$("nameIn").onkeydown=function(e){if(e.key==="Enter"&&!$("nameBtn").disabled)$("nameBtn").click()};
+$("nameBtn").onclick=function(){st.name=$("nameIn").value.trim().split(/\s+/)[0];st.i=0;renderQ();show("quiz")};
+
+/* quiz */
+function renderQ(){
+ var d=Q[st.i];$("q").textContent=d.q;$("count").textContent=(st.i+1)+" de "+Q.length;
+ $("bar").style.width=(st.i/Q.length*100)+"%";$("opts").innerHTML="";
+ d.o.forEach(function(t,k){var b=document.createElement("button");b.className="opt"+(st.a[st.i]===k?" sel":"");b.textContent=t;
+  b.onclick=function(){st.a[st.i]=k;renderQ();$("next").disabled=false;setTimeout(function(){if(st.a[st.i]===k)$("next").click()},350)};$("opts").appendChild(b)});
+ $("next").disabled=st.a[st.i]===undefined;$("next").textContent=st.i===Q.length-1?"VER A MINHA ANÁLISE":"CONTINUAR";
+ $("back").style.visibility=st.i===0?"hidden":"visible";
+}
+var lock=false;
+$("next").onclick=function(){if(st.a[st.i]===undefined||lock)return;lock=true;setTimeout(function(){lock=false},300);
+ if(st.i<Q.length-1){st.i++;renderQ()}else{analyse()}};
+$("back").onclick=function(){if(st.i>0){st.i--;renderQ()}};
+
+/* análise */
+function analyse(){
+ show("load");$("loadT").textContent="Estamos a analisar as tuas respostas, "+st.name+"...";
+ var m=["A avaliar os teus objectivos...","A identificar o teu nível de experiência...","A preparar o teu percurso de aprendizagem...","A finalizar o teu perfil..."];
+ $("lsteps").innerHTML=m.map(function(t){return "<li>"+t+"</li>"}).join("");
+ var lis=$("lsteps").children,p=0;$("lbar").style.width="0";
+ var iv=setInterval(function(){p++;$("lbar").style.width=(p*25)+"%";if(lis[p-1])lis[p-1].classList.add("on");
+  if(p>=4){clearInterval(iv);setTimeout(result,700)}},900);
+}
+function result(){
+ var a=st.a,goal=a[0],lvl=a[1],type=Q[2].o[a[2]],hard=a[4];
+ var perfil=["alguém que deseja aprender e desenvolver competências na preparação de brigadeiros","alguém que quer começar a vender brigadeiros","alguém que procura elevar a qualidade dos seus brigadeiros","alguém que procura uma fonte de rendimento extra com brigadeiros"][goal];
+ $("resTxt").textContent=st.name+", identificámos que o teu perfil é de "+perfil+".";
+ var nivel=["Como ainda não preparaste brigadeiros, o ebook leva-te do básico ao resultado final, passo a passo.","Como já tentaste e sentiste dificuldades, o ebook ajuda-te a perceber o ponto e a textura certos.","Como já dominas os tradicionais, podes avançar para sabores e apresentações mais elaboradas.","Como já preparas para vender, podes refinar a qualidade, a apresentação e os preços."][lvl];
+ var dif=["O conteúdo sobre técnicas de preparação e textura responde à tua dificuldade em acertar no ponto.","A parte de brigadeiros gourmet e recheados ajuda-te a criar sabores diferenciados.","A secção de decoração e apresentação foi pensada para te ajudar a apresentar melhor.","O ebook inclui o cálculo de custos e preços de venda, a tua maior dificuldade.","O ebook segue uma ordem clara, por isso sabes exactamente por onde começar."][hard];
+ var tipo=a[2]===3?"Vais encontrar os vários tipos de brigadeiros num só lugar.":"Vais encontrar conteúdo sobre brigadeiros "+type.replace(".","").toLowerCase()+".";
+ $("resHelp").textContent=nivel+" "+dif+" "+tipo;
+ show("result");
+}
+
+/* vídeo */
+function mountVideo(el,url,label){
+ if(!url||/^INSERIR_/.test(url)||!/^(https:\/\/|\/_blob\/|assets\/)/.test(url)){el.textContent=label+": adiciona um URL público (https) na configuração.";return}
+ if(/\.(mp4|webm|ogg)(\?|$)/i.test(url)||/^(\/_blob\/|assets\/)/.test(url)){var v=document.createElement("video");v.src=url;v.controls=true;v.preload="metadata";v.playsInline=true;v.muted=false;el.textContent="";el.appendChild(v);return v}
+ var m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
+ var src=m?"https://www.youtube.com/embed/"+m[1]+"?enablejsapi=1&rel=0&playsinline=1&origin="+encodeURIComponent(location.origin):url;
+ var f=document.createElement("iframe");f.src=src;f.allow="fullscreen; picture-in-picture";f.allowFullscreen=true;f.loading="lazy";f.title=label;el.textContent="";el.appendChild(f);
+}
+var inited=false;
+function initOffer(){
+ if(inited)return;inited=true;
+ $("old").textContent=fmt(CONFIG.ORIGINAL_PRICE_KZ);$("now").textContent=fmt(CONFIG.PRICE_KZ);
+ mountVideo($("vsl"),CONFIG.VSL_VIDEO_URL,"Vídeo de vendas");initPresence($("vsl").querySelector("video")||$("vsl").querySelector("iframe"));
+ mountVideo($("payvid"),CONFIG.PAYMENT_TUTORIAL_URL,"Vídeo tutorial de pagamento");
+}
+
+/* checkout: todos os botões de compra */
+document.querySelectorAll("[data-buy]").forEach(function(a){a.href=CONFIG.CHECKOUT_URL;a.rel="noopener"});
+if(CONFIG.SUPPORT_CONTACT)$("contact").innerHTML=" · <a href=\"mailto:"+encodeURIComponent(CONFIG.SUPPORT_CONTACT)+"\">Suporte</a>";
+
+/* notificações: apenas compras reais; demo só em localhost */
+var isDev=/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+/* ---- Supabase (opcional): presença em tempo real + compras confirmadas ---- */
+var sbc=null;
+function getSB(cb){
+ if(!CONFIG.SUPABASE_URL||!CONFIG.SUPABASE_ANON_KEY)return;
+ if(sbc)return cb(sbc);
+ var go=function(){sbc=window.supabase.createClient(CONFIG.SUPABASE_URL,CONFIG.SUPABASE_ANON_KEY);cb(sbc)};
+ if(window.supabase)return go();
+ var s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js";s.onload=go;document.head.appendChild(s);
+}
+function visitorId(){try{var v=localStorage.getItem("vid");if(!v){v=(crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2)+Date.now());localStorage.setItem("vid",v)}return v}catch(e){return String(Math.random()).slice(2)+Date.now()}}
+/* contador: conta apenas visitantes com a VSL em reprodução (Presence expira sozinho ao desligar) */
+function initPresence(frame){
+ if(!frame||!CONFIG.SUPABASE_URL||!CONFIG.SUPABASE_ANON_KEY)return;
+ getSB(function(sb){
+  var ch=sb.channel("vsl-viewers",{config:{presence:{key:visitorId()}}}),w=$("watch"),on=false;
+  ch.on("presence",{event:"sync"},function(){var s=ch.presenceState(),n=0;for(var k in s){if(s[k].some(function(x){return x.playing}))n++}
+   if(n>0){w.hidden=false;w.textContent="👁️ "+n+(n===1?" pessoa está":" pessoas estão")+" a assistir neste momento"}else w.hidden=true}).subscribe();
+  var set=function(p){if(p===on)return;on=p;if(p)ch.track({playing:true});else ch.untrack()};
+  if(frame.tagName==="VIDEO"){frame.addEventListener("playing",function(){set(true)});frame.addEventListener("pause",function(){set(false)});frame.addEventListener("ended",function(){set(false)})}
+  else{window.onYouTubeIframeAPIReady=function(){new YT.Player(frame,{events:{onStateChange:function(e){var s=e.data;if(s===1)set(true);else if(s===2||s===0)set(false)}}})};
+  var y=document.createElement("script");y.src="https://www.youtube.com/iframe_api";document.head.appendChild(y)}
+  addEventListener("pagehide",function(){set(false)});
+ });
+}
+/* ---- notificações (3s visível, 4s de intervalo, uma de cada vez) ---- */
+var NAMES=["Ana Paula","Maria Fernandes","Joana Miguel","Carla Domingos","Sandra Manuel","Beatriz António","Isabel Francisco","Patrícia José","Marta Joaquim","Daniela Pedro","Edna Mateus","Sónia Alberto","Rosa Clemente","Teresa Afonso","Juliana Sebastião","Cláudia André","Luísa Bernardo","Cátia Simão","Filomena Paulo","Andreia dos Santos"];
+var DEMO=(CONFIG.DEMO_NOTIFICATIONS_ENABLED&&isDev)||location.hash==="#demo",queue=[],seen={},di=0;
+var MSGS=[["Ebook digital","Estuda no telemóvel, quando quiseres."],["Três estilos num só ebook","Tradicionais, gourmet e recheados."],["Preços e custos","Aprende a calcular o preço de venda."],["Decoração","Aprende a apresentar melhor os teus brigadeiros."],["Acesso ao ebook","Recebes o acesso depois da confirmação do pagamento."],["Pagamento","Feito na plataforma Mentora."]],mi=0;
+function esc(s){return String(s).replace(/[<>&"]/g,"")}
+function enqueue(p){var k=p.id!=null?p.id:null;if(k!==null){if(seen[k])return;seen[k]=1}queue.push(p.name)}
+(function tick(){var t=$("toast"),n=queue.shift();
+ if(!n&&DEMO)n="[DEMO] "+NAMES[di++%NAMES.length];
+ var msg=null;if(!n){msg=MSGS[mi++%MSGS.length]}
+ t.innerHTML=msg?"<b><span class=\"dot\"></span>"+msg[0]+"</b><br>"+msg[1]:"<b>"+(n.indexOf("[DEMO]")===0?"Pré-visualização (demonstração)":"🟢 Pagamento realizado")+"</b><br><b><span class=\"dot\"></span>"+esc(n)+"</b><br>Adquiriu O Segredo dos Brigadeiros Perfeitos.";t.classList.add("show");
+ setTimeout(function(){t.classList.remove("show");setTimeout(tick,4000)},3000)})();
+/* faixa do rodapé: mensagens verdadeiras sobre o ebook; em demo mostra os nomes de exemplo. Quando houver compras reais autorizadas, substituem estas mensagens. */
+{var ni=2,nm=$("names");(function nt(){nm.hidden=false;nm.classList.remove("in");void nm.offsetWidth;nm.innerHTML="<span class=\"dot\"></span>"+esc(DEMO?"[DEMO] "+NAMES[ni%NAMES.length]:MSGS[ni%MSGS.length][0]+": "+MSGS[ni%MSGS.length][1]);ni++;nm.classList.add("in");setTimeout(nt,4000)})()}
+/* compras reais: webhook do checkout -> tabela purchases (só linhas confirmed=true) */
+if(CONFIG.PURCHASES_ENDPOINT){var pl=function(){fetch(CONFIG.PURCHASES_ENDPOINT).then(function(r){return r.json()}).then(function(a){a.forEach(enqueue)}).catch(function(){})};pl();setInterval(pl,20000)}
+getSB(function(sb){sb.channel("purchases-feed").on("postgres_changes",{event:"INSERT",schema:"public",table:"purchases",filter:"confirmed=eq.true"},function(m){if(m.new&&m.new.display_name)enqueue({id:m.new.id,name:m.new.display_name})}).subscribe()});
+/* pessoas activas na página: contagem real por Presence (sem Supabase fica oculto) */
+(function(){getSB(function(sb){var ch=sb.channel("page-visitors",{config:{presence:{key:visitorId()}}}),o=$("online");
+ ch.on("presence",{event:"sync"},function(){var n=Object.keys(ch.presenceState()).length;
+  if(n>0){o.hidden=false;o.innerHTML="<span class=\"dot\"></span>"+n+(n===1?" pessoa activa nesta página":" pessoas activas nesta página")}else o.hidden=true})
+ .subscribe(function(s){if(s==="SUBSCRIBED")ch.track({online:true})})})})();
+/* páginas legais (rotas #privacidade e #termos) */
+function legalRoute(){var h=location.hash.slice(1),L=$("legal"),ok=h==="privacidade"||h==="termos";
+ $("privacidade").hidden=h!=="privacidade";$("termos").hidden=h!=="termos";L.hidden=!ok;document.body.style.overflow=ok?"hidden":"";if(ok)L.scrollTop=0}
+var lc=CONFIG.SUPPORT_CONTACT?"Contacto: "+esc(CONFIG.SUPPORT_CONTACT):"Para dúvidas, usa os canais de contacto da plataforma Mentora.";
+$("lc1").textContent=lc;$("lc2").textContent=lc;
+$("legalX").onclick=function(){history.replaceState(null,"",location.pathname+location.search);legalRoute()};
+addEventListener("hashchange",legalRoute);addEventListener("keydown",function(e){if(e.key==="Escape"&&!$("legal").hidden)$("legalX").click()});legalRoute();
+</script>
+</body>
+</html>
